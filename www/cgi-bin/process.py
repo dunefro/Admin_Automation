@@ -56,10 +56,10 @@ elif "s3" in q:
   print()
   print(sp.getoutput("sudo ansible-playbook /var/www/cgi-bin/aws/s3.yml"))
 elif "hadoop" in q or "Hadoop" in q and "namenode" in q:
-  print("location: http://172.20.10.2/cgi-bin/ip_and_namenode.py")
+  print("location: http://192.168.43.125/cgi-bin/hadoop/ip_and_namenode.py")
   print()
 elif "hadoop" in q or "Hadoop" in q and "datanode" in q:
-  print("location: http://172.20.10.2/cgi-bin/ip_and_datanode.py")
+  print("location: http://192.168.43.125/cgi-bin/hadoop/ip_and_datanode.py")
   print()
 elif "mail" in q:
   print()
