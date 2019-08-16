@@ -1,0 +1,11 @@
+- hosts: localhost
+  tasks:
+   - pip:
+       name: boto3
+       state: present
+   - aws_s3:
+       bucket: "mynewbucket1916"
+       mode: create
+       permission: public-read
+       region: ap-south-1
+

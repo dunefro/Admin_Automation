@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+   - ec2:
+       image: "ami-5b673c34"
+       instance_type: "t2.micro"
+       key_name: "aws"
+       region: "ap-south-1"
+       state: present
+       wait: "True"
+       
