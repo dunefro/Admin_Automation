@@ -31,7 +31,7 @@ elif "software" in q and "firefox" in q or "Firefox" in q:
 
 elif "software" in q and "notepad" in q or "Notepad" in q:
   sp.getoutput("docker start gediting")
-  print("location: http://172.20.10.2:11112")
+  print("location: http://192.168.43.125:2233")
   print()
 
 elif "ec2" in q:
