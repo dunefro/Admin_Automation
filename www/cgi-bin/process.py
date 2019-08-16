@@ -26,7 +26,7 @@ elif "container" in q:
 
 elif "software" in q and "firefox" in q or "Firefox" in q:
   sp.getoutput("docker start fire")
-  print("location: http://172.20.10.2:11111")
+  print("location: http://192.168.43.125:3333")
   print()
 
 elif "software" in q and "notepad" in q or "Notepad" in q:
