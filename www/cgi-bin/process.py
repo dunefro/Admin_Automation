@@ -37,6 +37,7 @@ elif "software" in q and "notepad" in q or "Notepad" in q:
 elif "ec2" in q:
   print()
   print(sp.getoutput("sudo ansible-playbook /var/www/cgi-bin/aws/ec2.yml"))
+  
 elif "storage" in q:
   print()
   print("storage")
