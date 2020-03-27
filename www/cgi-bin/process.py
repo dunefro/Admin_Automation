@@ -66,6 +66,6 @@ elif "mail" in q:
   print()
 #  print(sp.getoutput('sudo ansible-playbook /var/www/cgi-bin/mail/mail.yml'))
   if "failed=0" in sp.getoutput("sudo ansible-playbook /var/www/cgi-bin/mail/mail.yml"):
-    print("Mail Successfully Sent")
+    print("Mail Successfully Sent ")
 else:
   print()
