@@ -9,6 +9,7 @@ import webbrowser as wb
 cgitb.enable()
 
 data=cgi.FieldStorage()
+
 q=data.getvalue('q')
 if "status" in q and "docker" in q:
   #print("location: http://172.20.10.2/cgi-bin/docker_start.py")
