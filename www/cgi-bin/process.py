@@ -1,5 +1,9 @@
 from flask import Flask
 import docker
+from helpers.docker_helper import container_list
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 app=Flask(__name__)
 
@@ -15,6 +19,15 @@ def check_docker_health():
         return {'status': 'success', 'response': 'Docker is running in the cluster'}
     except:
         return {'status': 'Failure', 'response': 'Docker is not present'}
+
+@app.route('/docker/table',methods=['GET'])
+def check_docker_table():
+    obj_list = container_list()
+    response = 'NAME\t\t\t\t\t\tIMAGE\t\t\t\t\t\tID\t\t\t\t\t\tSTATUS\n'
+    response_template = '{}\t\t\t\t\t\t{}\t\t\t\t\t\t{}\t\t\t\t\t\t{}\n'
+    for obj in obj_list:
+        response += response_template.format(obj.name,obj.image.tags,obj.short_id,obj.status)
+    return response
 
 
 if __name__=='__main__':
