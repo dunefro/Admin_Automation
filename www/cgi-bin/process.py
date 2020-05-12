@@ -1,10 +1,21 @@
 from flask import Flask
+import docker
 
 app=Flask(__name__)
 
 @app.route('/healthz',methods=['GET'])
 def check_health():
     return {'status': 'success', 'response': 'Api is working fine'}
+
+@app.route('/docker/healthz',methods=['GET'])
+def check_docker_health():
+    try:
+        client = docker.from_env()
+        client.info()
+        return {'status': 'success', 'response': 'Docker is running in the cluster'}
+    except:
+        return {'sttatus': 'Failure', 'response': 'Docker is not present'}
+
 
 if __name__=='__main__':
     app.run(port=5000)
