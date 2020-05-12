@@ -14,7 +14,7 @@ def check_docker_health():
         client.info()
         return {'status': 'success', 'response': 'Docker is running in the cluster'}
     except:
-        return {'sttatus': 'Failure', 'response': 'Docker is not present'}
+        return {'status': 'Failure', 'response': 'Docker is not present'}
 
 
 if __name__=='__main__':
