@@ -1,11 +1,17 @@
 from flask import Flask
 import docker
 from helpers.docker_helper import container_list
+from helpers.db_helper import create_db
 import logging
 
 logging.basicConfig(level=logging.INFO)
 
 app=Flask(__name__)
+
+@app.route('/',methods=['GET'])
+def main_route():
+    return 'Up and Running !!!'
+    # return {'status': 'success', 'response': 'Api is working fine'}
 
 @app.route('/healthz',methods=['GET'])
 def check_health():
@@ -33,9 +39,10 @@ def check_docker_table():
 def send_mail():
     deploy_req = request.json
 
-@app.route('/database/<string:db',methods=['GET'])
-def create_db(db):
-    #create db
+@app.route('/database/<string:db>',methods=['GET'])
+def db(db):
+    return str(create_db(db))
+
 
 if __name__=='__main__':
     app.run(port=5000)
