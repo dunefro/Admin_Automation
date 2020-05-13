@@ -29,6 +29,9 @@ def check_docker_table():
         response += response_template.format(obj.name,obj.image.tags,obj.short_id,obj.status)
     return response
 
+@app.route('/mail',methods=['POST'])
+def send_mail():
+    deploy_req = request.json
 
 if __name__=='__main__':
     app.run(port=5000)
