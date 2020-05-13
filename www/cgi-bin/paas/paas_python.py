@@ -2,8 +2,6 @@
 
 print("content-type: text/html")
 
-import subprocess as sp
-import cgi
 import cgitb
 
 cgitb.enable()
