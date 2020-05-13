@@ -33,6 +33,10 @@ def check_docker_table():
 def send_mail():
     deploy_req = request.json
 
+@app.route('/database/<string:db',methods=['GET'])
+def create_db(db):
+    #create db
+
 if __name__=='__main__':
     app.run(port=5000)
 
