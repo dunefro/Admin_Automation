@@ -9,7 +9,7 @@ def create_db(db_name):
     if db_name == 'redis':
         client.containers.run(image='redis:latest',detach=True)
     elif db_name == 'es':
-        client.containers.run(image='elasticsearch:latest', detach=True)
+        client.containers.run(image='elasticsearch:7.7.0', detach=True)
     elif db_name == 'mysql':
         client.containers.run(image='mysql:latest', detach=True,environment=["MYSQL_ALLOW_EMPTY_PASSWORD=True"])
     elif db_name == 'mongodb':
