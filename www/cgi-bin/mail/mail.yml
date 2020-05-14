@@ -8,5 +8,5 @@
         port: 587
         username: dunefro@gmail.com
         password: "{{ pass }}"
-        to: pareek.gr@gmail.com
+        to: example@example.com
                                                    
