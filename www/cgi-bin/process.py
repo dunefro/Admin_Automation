@@ -2,6 +2,7 @@ from flask import Flask
 import docker
 from helpers.docker_helper import container_list
 from helpers.db_helper import create_db
+from helpers.mail_helper import send_mail
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -35,13 +36,13 @@ def check_docker_table():
         response += response_template.format(obj.name,obj.image.tags,obj.short_id,obj.status)
     return response
 
-@app.route('/mail',methods=['POST'])
-def send_mail():
-    deploy_req = request.json
-
 @app.route('/database/<string:db>',methods=['GET'])
 def db(db):
     return str(create_db(db))
+
+@app.route('/mail/<string:name>',methods=['GET'])
+def write_mail(name):
+  return str(send_mail(name))
 
 
 if __name__=='__main__':
