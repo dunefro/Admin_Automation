@@ -4,7 +4,7 @@ from helpers.docker_helper import container_list
 from helpers.db_helper import create_db
 from helpers.mail_helper import send_mail
 from helpers.paas_helper import create_python_shell
-from helpers.saas_helper import create_firefox
+from helpers.saas_helper import create_firefox , create_notepad
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -51,8 +51,12 @@ def paas_python():
     return str(create_python_shell())
 
 @app.route('/saas/firefox',methods=['GET'])
-def saas_service():
+def saas_firefox():
     return str(create_firefox())
+
+@app.route('/saas/notepad',methods=['GET'])
+def saas_notepad():
+    return str(create_notepad())
 
 
 if __name__=='__main__':
