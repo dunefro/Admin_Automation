@@ -16,3 +16,14 @@ def create_firefox():
             break
 
     return paas_port
+
+def create_notepad():
+    while True:
+        paas_port = randint(49152, 65535)
+        port_list = [port for port in range(49512, 65536) if check_port(port) == 0]
+        if paas_port not in port_list:
+            logging.info(paas_port)
+            client.containers.run('dunefro/notepad:v1', detach=True, tty=True, ports={'3333/tcp': paas_port})
+            break
+
+    return paas_port
