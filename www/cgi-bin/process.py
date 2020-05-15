@@ -13,7 +13,7 @@ app=Flask(__name__)
 @app.route('/',methods=['GET'])
 def main_route():
     return 'Up and Running !!!'
-    # return {'status': 'success', 'response': 'Api is working fine'}
+
 
 @app.route('/healthz',methods=['GET'])
 def check_health():
