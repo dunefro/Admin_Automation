@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask , Response
 import docker
 from helpers.docker_helper import container_list
 from helpers.db_helper import create_db
 from helpers.mail_helper import send_mail
 from helpers.paas_helper import create_python_shell
 from helpers.saas_helper import create_firefox , create_notepad
+import time
+import cv2
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -58,9 +60,24 @@ def saas_firefox():
 def saas_notepad():
     return str(create_notepad())
 
+@app.route('/cam/',methods=['GET'])
+def camera_stream():
+    # camera_req = request.json
+    # while True:
+    return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+def gen():
+    video_stream = cv2.VideoCapture('rtsp://live1.brownrice.com:1935/westland/westland.stream')
+    while True:
+        success, frame_stream = video_stream.read()
+        ret, buffer = cv2.imencode('.jpg', frame_stream)
+        time.sleep(0.05)
+        yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + buffer.tobytes() + b'\r\n\r\n')
+
 
 if __name__=='__main__':
-    app.run(port=5000)
+    app.run(host='0.0.0.0',port=5000)
 
 # #!/usr/bin/python36
 #
