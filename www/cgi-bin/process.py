@@ -3,6 +3,7 @@ import docker
 from helpers.docker_helper import container_list
 from helpers.db_helper import create_db
 from helpers.mail_helper import send_mail
+from helpers.paas_helper import create_python_shell
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -43,6 +44,11 @@ def db(db):
 @app.route('/mail/<string:name>',methods=['GET'])
 def write_mail(name):
   return str(send_mail(name))
+
+@app.route('/paas/python',methods=['GET'])
+def paas_python():
+    create_python_shell()
+    return str(True)
 
 
 if __name__=='__main__':
