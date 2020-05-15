@@ -43,7 +43,7 @@ def db(db):
 
 @app.route('/mail/<string:name>',methods=['GET'])
 def write_mail(name):
-  return str(send_mail(name))
+    return str(send_mail(name))
 
 @app.route('/paas/python',methods=['GET'])
 def paas_python():
