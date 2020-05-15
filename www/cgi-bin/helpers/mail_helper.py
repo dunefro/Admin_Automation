@@ -11,3 +11,4 @@ def send_mail(client_name):
         client.containers.run(image='dunefro/mail:v3',environment=["MAIL=pareekvedant99@gmail.com"],detach=True)
         logging.info("Mail sent check the container logs or your inbox")
     # Space for adding more clients
+
