@@ -79,15 +79,6 @@ def gen():
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5000)
 
-#       print("Successful")
-#   else:
-#     print("Already giving the service")
-# elif "s3" in q:
-#   print()
-#   print(sp.getoutput("sudo ansible-playbook /var/www/cgi-bin/aws/s3.yml"))
-# elif "hadoop" in q or "Hadoop" in q and "namenode" in q:
-#   print("location: http://192.168.43.125/cgi-bin/hadoop/ip_and_namenode.py")
-#   print()
 # elif "hadoop" in q or "Hadoop" in q and "datanode" in q:
 #   print("location: http://192.168.43.125/cgi-bin/hadoop/ip_and_datanode.py")
 #   print()
