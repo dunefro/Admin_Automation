@@ -79,37 +79,6 @@ def gen():
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5000)
 
-# #!/usr/bin/python36
-#
-# print("content-type: text/html")
-#
-# import subprocess as sp
-# import cgi
-# import cgitb
-# import webbrowser as wb
-# cgitb.enable()
-#
-# data=cgi.FieldStorage()
-#
-# q=data.getvalue('q')
-# if "status" in q and "docker" in q:
-#   #print("location: http://172.20.10.2/cgi-bin/docker_start.py")
-#    print("location: http://192.168.43.125/cgi-bin/docker/docker_table.py")
-#    print()
-#
-# elif "paas" in q or "platform" in q:
-#   print("location: http://192.168.43.125:3200/")
-#   print()
-#
-# elif "container" in q:
-#  # print()
-#   print("location: http://192.168.43.125:2200")
-#   print()
-#
-# elif "software" in q and "firefox" in q or "Firefox" in q:
-#   sp.getoutput("docker start fire")
-#   print("location: http://192.168.43.125:3333")
-#   print()
 #
 # elif "software" in q and "notepad" in q or "Notepad" in q:
 #   sp.getoutput("docker start gediting")
