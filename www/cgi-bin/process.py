@@ -79,28 +79,6 @@ def gen():
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5000)
 
-#
-# elif "software" in q and "notepad" in q or "Notepad" in q:
-#   sp.getoutput("docker start gediting")
-#   print("location: http://192.168.43.125:2233")
-#   print()
-#
-# elif "ec2" in q:
-#   print()
-#   print(sp.getoutput("sudo ansible-playbook /var/www/cgi-bin/aws/ec2.yml"))
-#
-# elif "storage" in q:
-#   print()
-#   print("storage")
-#   x=sp.getoutput("ls / | grep shared")
-#   if x=='':
-#     print(sp.getoutput("sudo mkdir /shared"))
-#     print(sp.getoutput("sudo chmod 777 /shared"))
-#     print(sp.getoutput("sudo echo -e '/shared	*(rw,no_root_squash)' >> /etc/exports"))
-#     y=sp.getoutput("sudo showmount -e | grep /shared")
-#     if y=='':
-#       print("Unsuccessful")
-#     else:
 #       print("Successful")
 #   else:
 #     print("Already giving the service")
