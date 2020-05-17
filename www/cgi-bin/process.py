@@ -78,8 +78,3 @@ def gen():
 
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5000)
-
-#   if "failed=0" in sp.getoutput("sudo ansible-playbook /var/www/cgi-bin/mail/mail.yml"):
-#     print("Mail Successfully Sent ")
-# else:
-#   print()
