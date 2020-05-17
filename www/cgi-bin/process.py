@@ -62,8 +62,6 @@ def saas_notepad():
 
 @app.route('/cam/',methods=['GET'])
 def camera_stream():
-    # camera_req = request.json
-    # while True:
     return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 def gen():
@@ -74,7 +72,6 @@ def gen():
         time.sleep(0.05)
         yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + buffer.tobytes() + b'\r\n\r\n')
-
 
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5000)
