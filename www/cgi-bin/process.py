@@ -79,12 +79,6 @@ def gen():
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5000)
 
-# elif "hadoop" in q or "Hadoop" in q and "datanode" in q:
-#   print("location: http://192.168.43.125/cgi-bin/hadoop/ip_and_datanode.py")
-#   print()
-# elif "mail" in q:
-#   print()
-# #  print(sp.getoutput('sudo ansible-playbook /var/www/cgi-bin/mail/mail.yml'))
 #   if "failed=0" in sp.getoutput("sudo ansible-playbook /var/www/cgi-bin/mail/mail.yml"):
 #     print("Mail Successfully Sent ")
 # else:
