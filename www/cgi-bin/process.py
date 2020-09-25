@@ -67,7 +67,7 @@ def camera_stream():
     return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 def gen():
-    video_stream = cv2.VideoCapture('rtsp://live1.brownrice.com:1935/westland/westland.stream')
+    video_stream = cv2.VideoCapture('rtsp://freja.hiof.no:1935/rtplive/_definst_/hessdalen02.stream')
     while True:
         success, frame_stream = video_stream.read()
         ret, buffer = cv2.imencode('.jpg', frame_stream)
