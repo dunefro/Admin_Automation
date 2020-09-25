@@ -1,2 +1,5 @@
 flask
 docker
+speechrecognition
+PyAudio
+pyttsx3
