@@ -1,3 +1,5 @@
 venv/
 www/cgi-bin/helpers/__pycache__/
 www/cgi-bin/mail/var.yml
+.ipynb_checkpoints/
+.idea/
